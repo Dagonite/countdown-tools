@@ -12,9 +12,7 @@ Utilities for analysing Countdown words:
 
 - `distributions.py` - The letter distributions and vowel/consonant frequencies in letters rounds.
 
-- `simulate_rounds.py` - Script which generates a decks of consonants and vowels then simulates 10 letters rounds. Decks are de-clumped to avoid nasty clusters whilst keeping strong word coverage.
-
-- `simulated_rounds.csv` - 2 million randomly simulated games (20 million rounds).
+- `simulate_rounds.py` - Script which generates a decks of consonants and vowels then simulates 10 letters rounds. Decks are de-clumped to avoid nasty clusters whilst keeping strong word coverage. Simulated games are appended to an CSV.
 
 - `calculate_usefulness.py` - Script which analyses all of the simulated rounds to ascertain which words are the most useful to know. Words which have a 0% chance of showing up are excluded.
 
