@@ -1,7 +1,6 @@
-"""
-Defines the letter counts which make up the consonant and vowel decks for the 10
-letters rounds in a game of Countdown. There are bonus letter sets which can be
-added to each deck to provide more varied games and increase the scope of
+"""Defines the letter counts which make up the consonant and vowel decks for the
+10 letters rounds in a game of Countdown. There are bonus letter sets which can
+be added to each deck to provide more varied games and increase the scope of
 possible words that can appear.
 
 There is also a variable for determining the frequency of each of the three
