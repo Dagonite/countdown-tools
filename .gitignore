@@ -2,6 +2,4 @@ __pycache__/
 */__pycache__/
 *.py[cod]
 
-# Simulation generated outputs
-simulate_rounds/deck_debug.log
-simulate_rounds/simulated_rounds.csv
+simulations/deck_debug.log
