@@ -94,13 +94,13 @@ def parse_args() -> argparse.Namespace:
     word_list_path = dictionary_default if dictionary_default.exists() else legacy_default
 
     parser.add_argument("--words", type=Path, default=(word_list_path), help="Path to the dictionary file (text file or a CSV with a 'Word' column)")
-    parser.add_argument("--games", type=int, default=2, help="Number of games to simulate (10 rounds per game)")
+    parser.add_argument("--games", type=int, default=1, help="Number of games to simulate (10 rounds per game)")
     parser.add_argument("--output", type=Path, default=simulation_dir / "simulated_rounds.csv", help="What CSV to append the output to")
     parser.add_argument("--seed", type=int, default=None, help="Optional RNG seed for reproducibility")
     parser.add_argument("--max-clumpiness", type=int, default=26, help="Maximum clumpiness score for a deck to be accepted")
     parser.add_argument("--duplicate-safe-gap", type=int, default=5, help="Minimum gap between duplicate letters to avoid clumpiness penalties")
     parser.add_argument("--nasty-safe-gap", type=int, default=6, help="Minimum gap between nasty letters to avoid clumpiness penalties")
-    parser.add_argument("--shuffle-attempts", type=int, default=50, help="Maximum number of shuffles to attempt when generating a deck")
+    parser.add_argument("--shuffle-attempts", type=int, default=25, help="Maximum number of random shuffles to attempt when generating a deck")
     parser.add_argument("--debug-log", type=Path, nargs="?", const=simulation_dir / "deck_debug.log", default=None, help="Enable debug logging for decks)")
 
     return parser.parse_args()
