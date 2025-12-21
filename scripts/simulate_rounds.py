@@ -414,11 +414,19 @@ def simulate_game(rng: random.Random, anagram_index: AnagramIndex, word_order: W
         if vowel_idx + vowels_needed > len(vowel_deck) or consonant_idx + consonants_needed > len(consonant_deck):
             raise RuntimeError("Not enough letters left in a deck for this round.")
 
-        draw = vowel_deck[vowel_idx : vowel_idx + vowels_needed] + consonant_deck[consonant_idx : consonant_idx + consonants_needed]
-        vowel_idx += vowels_needed
-        consonant_idx += consonants_needed
+        # Randomize the order letters are taken whilst keeping deck order within each type
+        draw_pattern = ["V"] * vowels_needed + ["C"] * consonants_needed
+        rng.shuffle(draw_pattern)
 
-        rng.shuffle(draw)
+        draw: List[str] = []
+        for slot in draw_pattern:
+            if slot == "V":
+                draw.append(vowel_deck[vowel_idx])
+                vowel_idx += 1
+            else:
+                draw.append(consonant_deck[consonant_idx])
+                consonant_idx += 1
+
         best_words, best_length = find_best_words(draw, anagram_index, word_order)
         rounds.append({"Selection": "".join(draw), "Max": "/".join(best_words), "Length": best_length})
 
