@@ -1,8 +1,9 @@
 """Defines the letter counts which make up the consonant and vowel decks used on
 the game show Countdown. Because of certain letter counts and the limited
-vowel/consonant distributions allowed, there's roughly 3,300 words which
-essentially have a 0% chance of showing up. Although this is a small fraction of
-the overall word list.
+vowel/consonant distributions allowed, there's roughly 3,300 words which have a
+0% chance of ever showing up in letters rounds. Some of the 9-letter words can
+still show up as conundrums. All of these words can be found in
+`impossible.csv`.
 
 The rough popularity of the three vowel/consonant distributions used on the
 show are:
